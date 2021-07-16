@@ -1,4 +1,4 @@
-{
+var branch={
   "Aerospace Engineering": [
     "AEROSPACE ENGINEERING(B.TECH 4Y)",
     "AEROSPACE ENGINEERING (M.TECH DUAL 5Y)"
@@ -113,3 +113,5 @@
     "BTECH IN PARENT DEPARTMENT/MTECH IN FINANCIAL  ENGINEERING"
   ]
 }
+
+export default branch;

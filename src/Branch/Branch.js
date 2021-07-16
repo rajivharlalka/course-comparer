@@ -1,35 +1,56 @@
-import React from 'react';
-import Select from 'react-select';
-import './Branch.css'
+import React, { useState } from "react";
+import Select from "react-select";
+import "./Branch.css";
+import dep from "./../data/dep";
+import branch from "./../data/dep-branch";
+import course from './../data/course';
 
 const Branch = (props) => {
+  const [branches, updateBranches] = useState([]);
+//   const [Value, setValue] = useState("Select dep and Course")
 
-    var departments = [
-        {value : 'Dep1', label : 'Dep1'},
-        {value : 'Dep2', label : 'Dep2'},
-        {value : 'Dep3', label : 'Dep3'}
-    ];
+  var departments = dep.department.map((e) => {
+    return { label: e, value: e };
+  });
 
-    var branches = [
-        {value : 'Branch1', label : 'Branch1'},
-        {value : 'Branch2', label : 'Branch2'},
-        {value : 'Branch3', label : 'Branch3'}
-    ];
+  function updateBranch(e) {
+    var br = branch[e].map((val) => {
+      return { label: val, value: val };
+    });
+    updateBranches(br);
+    console.log(branches);
+  }
 
-    return (
-        <div className="Branch">
-            <form>
-                <label>Select Department : </label>
-                <Select options={departments} className="dropdown">Select Department : </Select>
-                <br/>
-                <label> Select Branch : </label>
-                <Select options={branches} className="dropdown"></Select>
-                <br/>
-                <button onClick={props.submit}>Submit</button>
-            </form>
-            <div className="courseDisplay">Something goes here</div>
-        </div>
-    )
-}
+  function handleDepChange(e) {
+    updateBranch(e.value);
+    console.log(e.value);
+  }
+
+  function handleCourseChange(e){
+    // setValue((course[e.value]).toString);
+    console.log(course[e.value]);
+  }
+
+  return (
+    <div className='Branch'>
+      <form>
+        <label>Select Department : </label>
+        <Select
+          options={departments}
+          className='dropdown'
+          onChange={(e) => handleDepChange(e)}
+        >
+          Select Department :{" "}
+        </Select>
+        <br />
+        <label> Select Branch : </label>
+        <Select options={branches} className='dropdown' onChange={(e)=> handleCourseChange(e)}></Select>
+        <br />
+        <button onClick={props.submit}>Submit</button>
+      </form>
+      <div className='courseDisplay'>Add dept and course</div>
+    </div>
+  );
+};
 
 export default Branch;
