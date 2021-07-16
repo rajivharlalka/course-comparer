@@ -1,4 +1,4 @@
-{
+var dep={
   "department": [
     "Aerospace Engineering",
     "Agricultural and Food Engineering",
@@ -25,3 +25,5 @@
     "Vinod Gupta School of Management (Coordinating Department)"
   ]
 }
+
+export default dep;

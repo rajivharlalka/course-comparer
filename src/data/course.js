@@ -1,4 +1,4 @@
-{
+var course={
   "AEROSPACE ENGINEERING(B.TECH 4Y)": {
     "Semester : 1 & 2": [
       {
@@ -34461,4 +34461,4 @@
     ]
   }
 }
-{"mode":"full","isActive":false}
+export default course;
