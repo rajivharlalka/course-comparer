@@ -12,12 +12,8 @@
     "AGR. FOOD ENGG. LAND AND WATER RESOURCES ENGG.(M.TECH DUAL 5Y)",
     "AGRICULTURAL AND FOOD ENGINEERING  DUAL DEGREE IN AVAILABE SPECIALISATION. (M.TECH DUAL 5Y)"
   ],
-  "Architecture and Regional Planning": [
-    "ARCHITECTURE (B.ARCH 5Y)"
-  ],
-  "Bio Science": [
-    "CHEMICAL AND MOLECULAR BIOLOGY(2YR. M.SC.)"
-  ],
+  "Architecture and Regional Planning": ["ARCHITECTURE (B.ARCH 5Y)"],
+  "Bio Science": ["CHEMICAL AND MOLECULAR BIOLOGY(2YR. M.SC.)"],
   "Biotechnology": [
     "BIOTECH. AND BIOCHEMICAL ENGG. (B.TECH 4Y)",
     "BIOTECHNOLOGY AND BIOCHEM. ENGG. (M.TECH DUAL 5Y)"
@@ -26,10 +22,7 @@
     "CHEMICAL ENGG. (B.TECH 4Y)",
     "CHEMICAL ENGG.(M.TECH DUAL 5Y)"
   ],
-  "Chemistry": [
-    "CHEMISTRY (M.SC. 5Y)",
-    "CHEMISTRY (2YR. M.SC.)"
-  ],
+  "Chemistry": ["CHEMISTRY (M.SC. 5Y)", "CHEMISTRY (2YR. M.SC.)"],
   "Civil Engineering": [
     "CIVIL ENGG. (B.TECH 4Y)",
     "CIVIL ENGG. STRUCTURAL ENGG. (M.TECH DUAL5Y)",
@@ -71,9 +64,7 @@
     "APPLIED GEOLOGY (M.SC. 5Y)",
     "GEOLOGY(2YR. M.SC.)"
   ],
-  "Humanities and Social Sciences": [
-    "ECONOMICS (M.SC. 5Y)"
-  ],
+  "Humanities and Social Sciences": ["ECONOMICS (M.SC. 5Y)"],
   "Industrial and Systems Engineering": [
     "INDUSTRIAL ENGG. (B.TECH 4Y)",
     "INDU. ENGG. INDU. ENGG. AND MANG. (M.TECH DUAL 5Y)",
@@ -109,10 +100,7 @@
     "OCEAN ENGG.AND NAVAL ARCH. (B.TECH 4Y)",
     "OCEAN AND NAVAL ARCH /  OCEAN ENGG. NAVAL ARCH. (M.TECH DUAL 5Y)"
   ],
-  "Physics": [
-    "PHYSICS (M.SC. 5Y)",
-    "PHYSICS(2YR. M.SC.)"
-  ],
+  "Physics": ["PHYSICS (M.SC. 5Y)", "PHYSICS(2YR. M.SC.)"],
   "School of Medical Science and Technology": [
     "MEDICAL PHYSICS (3YR. M.SC.)",
     "NUCLEAR MEDICINE (2YR. M.SC.)",
@@ -125,4 +113,3 @@
     "BTECH IN PARENT DEPARTMENT/MTECH IN FINANCIAL  ENGINEERING"
   ]
 }
-{"mode":"full","isActive":false}
