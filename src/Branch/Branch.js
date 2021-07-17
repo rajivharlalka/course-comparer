@@ -1,51 +1,40 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import { Table } from "react-bootstrap";
+
 import "./Branch.css";
 import dep from "./../data/dep";
 import branch from "./../data/dep-branch";
 import course from "./../data/course";
 
 const Branch = (props) => {
-  const [branches, updateBranches] = useState([]);
-  const [Text, setText] = useState({ text: "Select dep and Course" });
+  const [branches, setBranches] = useState([]);
+  const [semesters, setSemesters] = useState({});
+  const [courses, setCourses] = useState([]);
 
-  var departments = dep.department.map((e) => {
+  const departments = dep.department.map((e) => {
     return { label: e, value: e };
   });
 
-  function updateBranch(e) {
-    var br = branch[e].map((val) => {
-      return { label: val, value: val };
-    });
-    updateBranches(br);
-    // console.log(branches);
-  }
-
   function handleDepChange(e) {
-    updateBranch(e.value);
-    // console.log(e.value);
+    setBranches(branch[e.value].map((val) => ({ label: val, value: val })));
   }
 
-  function handleCourseChange(e) {
-    setText(course[e.value]);
+  function handleBranchChange(e) {
+    setSemesters(course[e.value]);
   }
-  
-  var semdata;
-  function getSemData() {
-    var entity = Object.keys(Text);
-    semdata = entity.map((e) => {
-      return Text[e];
-    });
+
+  function handleSemesterChange(e) {
+    setCourses(semesters[e.value]);
   }
-  getSemData();
 
   return (
-    <div className='Branch'>
+    <div className="Branch">
       <form>
         <label>Select Department : </label>
         <Select
           options={departments}
-          className='dropdown'
+          className="dropdown"
           onChange={(e) => handleDepChange(e)}
         >
           Select Department :{" "}
@@ -54,14 +43,44 @@ const Branch = (props) => {
         <label> Select Branch : </label>
         <Select
           options={branches}
-          className='dropdown'
-          onChange={(e) => handleCourseChange(e)}
+          className="dropdown"
+          onChange={(e) => handleBranchChange(e)}
         ></Select>
         <br />
-        <button onClick={props.submit}>Submit</button>
+        <label> Select Semester : </label>
+        <Select
+          options={Object.keys(semesters).map((val) => ({
+            label: val,
+            value: val,
+          }))}
+          className="dropdown"
+          onChange={(e) => handleSemesterChange(e)}
+        ></Select>
+        <br />
       </form>
-      <div className='courseDisplay'>
-        {console.log(semdata)}
+      <div className="courseDisplay">
+        <Table striped bordered hover style={{fontSize: "0.9em"}}>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Code</th>
+              <th>Name</th>
+              <th>L-T-P</th>
+              <th>Credits</th>
+            </tr>
+          </thead>
+          <tbody>
+            {courses.map((val, idx) => (
+              <tr key={idx}>
+                <td>{val.type || "---"}</td>
+                <td>{val.code || "---"}</td>
+                <td>{val.name || "---"}</td>
+                <td>{val.ltp || "---"}</td>
+                <td>{val.credits || "---"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </div>
     </div>
   );
